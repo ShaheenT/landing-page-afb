@@ -1,0 +1,15 @@
+services:
+  - type: web
+    name: athaanfibeit-livepage
+    env: node
+    region: oregon    # choose your preferred region
+    branch: main
+    buildCommand: npm install
+    startCommand: npm start
+    envVars:
+      - key: MONGO_URI
+        value: "mongodb+srv://athaan_admin:qhH4Gmb2D432zIWk@athaanfi-prod.c1kobkk.mongodb.net/?appName=athaanfi-prod"
+      - key: EMAIL_USER
+        value: "athaanfibeit@gmail.com"
+      - key: EMAIL_PASS
+        value: "ztru pmcj xcox dwrg"

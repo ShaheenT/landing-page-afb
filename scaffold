@@ -1,0 +1,10 @@
+athaan-fi-beit/
+├── index.html
+├── assets/
+│   ├── main.css
+│   ├── main.js
+│   └── athaanfi-logo.png
+├── server.js            <-- Node.js backend
+├── package.json
+├── .env                 <-- Environment variables (DB URI, email creds)
+└── node_modules/

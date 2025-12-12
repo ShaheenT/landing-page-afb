@@ -1,0 +1,23 @@
+{
+  "name": "athaan-fi-beit",
+  "version": "1.0.0",
+  "description": "Athaan Fi Beit - landing + signup backend",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "engines": {
+    "node": "18.x"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.6.1",
+    "express": "^4.22.1",
+    "mongoose": "^7.8.8",
+    "node-fetch": "^2.7.0",
+    "nodemailer": "^7.0.11"
+  },
+  "devDependencies": {
+    "tailwindcss": "^4.1.17"
+  }
+}

@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Athaan Fi Beit - Islamic Prayer Management</title>
+
+  <!-- Tailwind CSS CDN -->
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@3.3.3/dist/tailwind.min.css" rel="stylesheet">
+
+  <!-- Optional: Your own custom styles -->
+  <link rel="stylesheet" href="assets/main.css">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="assets/athaanfi-logo.png">
+</head>
+<body class="min-h-screen bg-gradient-to-br from-emerald-50 via-white to-blue-50 font-sans">
+
+  <!-- HERO SECTION -->
+  <section class="relative overflow-hidden bg-gradient-to-r from-emerald-600 to-blue-600 text-white">
+    <div class="absolute inset-0 bg-black/20"></div>
+    <div class="relative max-w-7xl mx-auto px-6 py-20 grid lg:grid-cols-2 gap-12 items-center">
+
+      <div class="space-y-8">
+        <span class="bg-white/20 text-white border-white/30 px-3 py-1 rounded inline-block">✨ Now Available - Islamic Prayer Management</span>
+        <h1 class="text-5xl lg:text-6xl font-bold leading-tight">
+          <span class="block">Athaan Fi Beit</span>
+          <span class="block text-yellow-300">Islamic Prayer Times</span>
+          <span class="block text-3xl lg:text-4xl font-normal mt-2">Automated & Personalized</span>
+        </h1>
+        <p class="text-xl text-emerald-100 leading-relaxed">
+          Transform your home into a spiritual sanctuary with our intelligent Islamic prayer management system.
+          Automated Athaan calls, precise prayer times, and comprehensive household prayer tracking.
+        </p>
+        <button id="signupButton"
+          class="bg-white text-emerald-600 hover:bg-emerald-50 font-semibold text-lg px-8 py-3 rounded inline-flex items-center gap-2">
+          Get Started - Sign Up Now
+        </button>
+      </div>
+
+      <div class="relative">
+        <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-8 border border-white/20">
+          <div class="text-center space-y-6">
+            <div class="h-24 w-24 mx-auto">
+              <img src="assets/athaanfi-logo.png" alt="Athaan Fi Beit Logo"
+                   class="h-full w-full object-contain drop-shadow-lg shadow-yellow-400/50" />
+            </div>
+            <h3 class="text-2xl font-semibold">Complete Islamic Solution</h3>
+            <div class="grid grid-cols-2 gap-4 text-sm">
+              <div>✔ Automated Athaan</div>
+              <div>✔ Prayer Reminders</div>
+              <div>✔ IoT Integration</div>
+              <div>✔ Family Management</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- FEATURES SECTION -->
+  <section class="py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-6">
+
+      <div class="text-center space-y-4 mb-16">
+        <span class="bg-emerald-100 text-emerald-700 px-3 py-1 rounded inline-block">Features</span>
+        <h2 class="text-4xl font-bold text-gray-900">Everything You Need for Islamic Prayer Management</h2>
+        <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+          Comprehensive features designed to enhance your family's spiritual journey with modern technology.
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+        <!-- Automated Prayer Times -->
+        <div class="border border-emerald-100 p-6 rounded-lg hover:shadow-lg transition-shadow text-center">
+          <svg xmlns="http://www.w3.org/2000/svg"
+               class="h-12 w-12 text-emerald-600 mb-4 mx-auto"
+               fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="10"></circle>
+            <polyline points="12 6 12 12 16 14"></polyline>
+          </svg>
+          <h3 class="text-xl font-semibold mb-2">Automated Prayer Times</h3>
+          <p class="text-gray-600 mb-2">
+            Precise prayer times calculated for your location with automatic Athaan calls.
+          </p>
+          <ul class="text-sm text-gray-600 space-y-1">
+            <li>• Location-based calculations</li>
+            <li>• Multiple calculation methods</li>
+            <li>• Customizable Athaan audio</li>
+            <li>• Volume and timing control</li>
+          </ul>
+        </div>
+
+        <!-- Family Management -->
+        <div class="border border-purple-100 p-6 rounded-lg hover:shadow-lg transition-shadow text-center">
+          <svg xmlns="http://www.w3.org/2000/svg"
+               class="h-12 w-12 text-purple-600 mb-4 mx-auto"
+               fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path>
+            <circle cx="9" cy="7" r="4"></circle>
+            <path d="M22 21v-2a4 4 0 0 0-3-3.87"></path>
+            <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+          </svg>
+          <h3 class="text-xl font-semibold mb-2">Family Management</h3>
+          <p class="text-gray-600 mb-2">
+            Manage prayer schedules for entire households with individual preferences.
+          </p>
+          <ul class="text-sm text-gray-600 space-y-1">
+            <li>• Multiple user profiles</li>
+            <li>• Individual preferences</li>
+            <li>• Notification settings</li>
+            <li>• Prayer tracking</li>
+          </ul>
+        </div>
+
+        <!-- Progressive Web App -->
+        <div class="border border-green-100 p-6 rounded-lg hover:shadow-lg transition-shadow text-center">
+          <svg xmlns="http://www.w3.org/2000/svg"
+               class="h-12 w-12 text-green-600 mb-4 mx-auto"
+               fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="10"></circle>
+            <path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"></path>
+            <path d="M2 12h20"></path>
+          </svg>
+          <h3 class="text-xl font-semibold mb-2">Progressive Web App</h3>
+          <p class="text-gray-600 mb-2">Access Athaan Fi Beit from any device with an app-like interface</p>
+          <ul class="text-sm text-gray-600 space-y-1">
+            <li>• Mobile-ready</li>
+            <li>• Add to home screen</li>
+            <li>• Works offline</li>
+            <li>• Push notifications</li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- SIGNUP SECTION -->
+  <section id="signup-section" class="py-20 bg-gradient-to-r from-emerald-600 to-blue-600">
+    <div class="max-w-4xl mx-auto px-6">
+      <div class="bg-white rounded-2xl p-8 lg:p-12 shadow-2xl">
+
+        <div class="text-center space-y-6 mb-8">
+          <svg xmlns="http://www.w3.org/2000/svg"
+               class="h-16 w-16 text-emerald-600 mx-auto"
+               fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"></path>
+          </svg>
+          <h2 class="text-4xl font-bold text-gray-900">Join the Athaan Fi Beit Family</h2>
+          <p class="text-xl text-gray-600">
+            Start your spiritual journey with automated Islamic prayer management.
+            Sign up now to receive installation guidance and early access.
+          </p>
+        </div>
+
+        <form class="space-y-6" id="signup-form">
+          <div class="grid md:grid-cols-2 gap-6">
+            <div class="space-y-2">
+              <label class="text-sm text-gray-700 font-medium">Full Name *</label>
+              <input id="name" type="text" required
+                     class="h-12 w-full rounded-md border px-3 py-2 focus-visible:ring-2 focus-visible:ring-emerald-600">
+            </div>
+            <div class="space-y-2">
+              <label class="text-sm text-gray-700 font-medium">Email Address *</label>
+              <input id="email" type="email" required
+                     class="h-12 w-full rounded-md border px-3 py-2 focus-visible:ring-2 focus-visible:ring-emerald-600">
+            </div>
+          </div>
+
+          <div class="space-y-2">
+            <label class="text-sm text-gray-700 font-medium">Phone Number *</label>
+            <input id="phone" type="tel" required
+                   class="h-12 w-full rounded-md border px-3 py-2 focus-visible:ring-2 focus-visible:ring-emerald-600">
+          </div>
+
+          <div class="bg-emerald-50 p-4 rounded-lg">
+            <h4 class="font-semibold text-emerald-800 mb-2">What happens next?</h4>
+            <ul class="text-sm text-emerald-700 space-y-1">
+              <li>• We'll send you instructions via email</li>
+              <li>• We will contact you to schedule setup</li>
+              <li>• Receive your Athaan Fi Beit with EiXRaspi software installed</li>
+              <li>• Start enjoying automated prayer calls immediately</li>
+            </ul>
+          </div>
+
+          <button type="submit"
+                  class="inline-flex items-center justify-center w-full h-12 bg-emerald-600 hover:bg-emerald-700 text-white font-semibold rounded-md transition">
+            Get Started - Sign Up Now
+            <svg xmlns="http://www.w3.org/2000/svg" class="ml-2 h-5 w-5"
+                 fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M5 12h14"></path>
+              <path d="m12 5 7 7-7 7"></path>
+            </svg>
+          </button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER SECTION -->
+  <footer class="py-20 bg-gray-50">
+    <div class="max-w-7xl mx-auto px-6 text-center space-y-6">
+      <img src="assets/athaanfi-logo.png" class="h-12 mx-auto" alt="Athaan Fi Beit Logo">
+      <p class="text-gray-600 max-w-2xl mx-auto">
+        Athaan Fi Beit is a modern Islamic prayer management system designed to bring automation,
+        discipline, and spiritual harmony into every Muslim home. Powered by smart technology and IoT.
+      </p>
+      <p class="text-sm text-gray-500">
+        © 2025 Athaan Fi Beit. All rights reserved.
+      </p>
+    </div>
+  </footer>
+
+  <!-- Optional JS -->
+  <script src="signup.js"></script>
+
+</body>
+</html>
