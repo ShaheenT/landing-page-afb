@@ -1,36 +1,52 @@
 document.addEventListener('DOMContentLoaded', () => {
   const signupForm = document.getElementById('signup-form');
-  const statusP = document.getElementById('status');
   const signupButton = document.getElementById('signupButton');
+  const submitButton = signupForm?.querySelector('button[type="submit"]');
 
-  // Scroll to signup section when button clicked
+  const successModal = document.getElementById('successModal');
+  const closeModalBtn = document.getElementById('closeModal');
+
+  // Scroll to signup section from hero button
   signupButton?.addEventListener('click', () => {
-    document.getElementById('signup-section')?.scrollIntoView({ behavior: 'smooth' });
+    document
+      .getElementById('signup-section')
+      ?.scrollIntoView({ behavior: 'smooth' });
   });
 
-  // Optional reCAPTCHA v3 token
+  // Close modal handler
+  closeModalBtn?.addEventListener('click', () => {
+    successModal.classList.add('hidden');
+    successModal.classList.remove('flex');
+  });
+
   async function getRecaptchaToken() {
     if (!window.grecaptcha || !grecaptcha.execute) return '';
     try {
-      const token = await grecaptcha.execute('REPLACE_WITH_SITE_KEY', { action: 'signup' });
-      return token;
+      return await grecaptcha.execute('REPLACE_WITH_SITE_KEY', {
+        action: 'signup'
+      });
     } catch (err) {
-      console.warn('reCAPTCHA token error', err);
+      console.warn('reCAPTCHA execution failed', err);
       return '';
     }
   }
 
   signupForm.addEventListener('submit', async (e) => {
     e.preventDefault();
-    statusP.textContent = 'Submitting...';
-    statusP.classList.remove('text-green-600', 'text-red-600');
+
+    if (submitButton) {
+      submitButton.disabled = true;
+      submitButton.textContent = 'Submitting...';
+    }
 
     const name = document.getElementById('name').value.trim();
     const email = document.getElementById('email').value.trim();
     const phone = document.getElementById('phone').value.trim();
 
     let recaptchaToken = '';
-    if (window.grecaptcha) recaptchaToken = await getRecaptchaToken();
+    if (window.grecaptcha) {
+      recaptchaToken = await getRecaptchaToken();
+    }
 
     try {
       const res = await fetch('/api/signup', {
@@ -39,24 +55,29 @@ document.addEventListener('DOMContentLoaded', () => {
         body: JSON.stringify({ name, email, phone, recaptchaToken })
       });
 
-      const json = await res.json();
+      const data = await res.json();
 
-      if (res.ok) {
-        // Success
-        statusP.textContent = json.message || 'Signup successful — check your email';
-        statusP.classList.add('text-green-600');
-
-        // Auto-clear form
-        signupForm.reset();
-      } else {
-        // Error (duplicate, validation, or recaptcha fail)
-        statusP.textContent = json.message || 'Signup failed.';
-        statusP.classList.add('text-red-600');
+      if (!res.ok) {
+        throw new Error(data.message || 'Signup failed');
       }
+
+      // Success path
+      signupForm.reset();
+
+      successModal.classList.remove('hidden');
+      successModal.classList.add('flex');
+
     } catch (err) {
-      console.error(err);
-      statusP.textContent = 'Server error. Try again later.';
-      statusP.classList.add('text-red-600');
+      console.error('Signup error:', err);
+      alert(
+        err.message ||
+        'We were unable to complete your signup. Please try again later.'
+      );
+    } finally {
+      if (submitButton) {
+        submitButton.disabled = false;
+        submitButton.textContent = 'Get Started - Sign Up Now';
+      }
     }
   });
 });
