@@ -8,7 +8,12 @@ services:
     startCommand: npm start
     envVars:
       - key: MONGO_URI
+        value: "PLACEHOLDER"
       - key: EMAIL_USER
+        value: "PLACEHOLDER"
       - key: EMAIL_PASS
+        value: "PLACEHOLDER"
       - key: ADMIN_EMAIL
+        value: "PLACEHOLDER"
       - key: RECAPTCHA_SECRET
+        value: "PLACEHOLDER"
