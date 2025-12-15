@@ -8,12 +8,7 @@ services:
     startCommand: npm start
     envVars:
       - key: MONGO_URI
-        sync: false
       - key: EMAIL_USER
-        sync: false
       - key: EMAIL_PASS
-        sync: false
       - key: ADMIN_EMAIL
-        sync: false
       - key: RECAPTCHA_SECRET
-        sync: false
